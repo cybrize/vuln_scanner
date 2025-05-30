@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Rate Limit Exceeded - VulnScanner Pro{% endblock %}
+{% block content %}
+<div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+    <div class="mb-8">
+        <svg class="w-24 h-24 text-indigo-400 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <h1 class="text-6xl font-bold text-gray-900 mb-4">429</h1>
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Too Many Requests</h2>
+        <p class="text-gray-600 mb-8">You've exceeded the rate limit. Please wait a moment before trying again.</p>
+    </div>
+    
+    <div class="space-y-4">
+        <a 
+            href="{{ url_for('main.dashboard') }}" 
+            class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        >
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+            </svg>
+            Back to Dashboard
+        </a>
+        
+        <p class="text-sm text-gray-500">
+            Wait a few minutes and try again
+        </p>
+    </div>
+</div>
+{% endblock %}
